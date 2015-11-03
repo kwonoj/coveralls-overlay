@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "declaration": true,
+    "target": "ES5",
+    "outDir": "dist/build",
+    "module": "commonjs",
+    "noImplicitAny": true
+   },
+   "files": [
+   	"typings/tsd.d.ts",
+   	"src/overlayWindow.ts",
+     "src/githubWindow.ts",
+     "src/storageObject.ts",
+     "src/syncStorage.ts",
+     "src/browser/chrome/bootStrapper.ts",
+     "src/browser/chrome/options.ts"
+   ]
+}

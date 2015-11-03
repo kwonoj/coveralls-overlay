@@ -1,0 +1,45 @@
+{
+  "name": "coveralls-overlay",
+  "version": "0.0.1",
+  "description": "Chrome extension to overlay coveralls code coverage",
+  "main": "",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+    "postinstall": "tsd install",
+    "build": "npm run lint:src && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:src": "tslint -c .tslintrc src/githubWindow.ts src/overlayWindow.ts src/browser/chrome/bootStrapper.ts src/browser/chrome/options.ts src/storageObject.ts src/syncStorage.ts",
+    "commit": "git-cz",
+    "package:less": "lessc src/coveralls.less dist/chrome/lib/coveralls.css",
+    "package:options": "browserify -d dist/build/browser/chrome/options.js dist/build/storageObject.js dist/build/syncStorage.js | exorcist dist/chrome/lib/options.js.map > dist/chrome/lib/options.js",
+    "package:main": "browserify -d dist/build/browser/chrome/bootStrapper.js dist/build/githubWindow.js dist/build/overlayWindow.js dist/build/storageObject.js dist/build/syncStorage.js | exorcist dist/chrome/lib/coveralls.js.map > dist/chrome/lib/coveralls.js",
+    "package:init": "rm -rf dist/chrome && mkdir \"dist/chrome\" && mkdir \"dist/chrome/lib\"",
+    "package:resource": "cp -r resources dist/chrome && cp ./node_modules/jquery/dist/jquery.min.js dist/chrome/lib && cp ./node_modules/rx/dist/rx.min.js dist/chrome/lib && cp ./node_modules/rx-jquery/rx.jquery.js dist/chrome/lib",
+    "package:manifest": "cp src/browser/chrome/manifest.json dist/chrome && cp src/browser/chrome/options.html dist/chrome/lib",
+    "package": "npm run build && npm run package:init && npm run package:less && npm run package:manifest && npm run package:resource && npm run package:main && npm run package:options"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kwonoj/coveralls-overlay"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "homepage": "",
+  "devDependencies": {
+    "browserify": "12.0.1",
+    "commitizen": "2.4.1",
+    "cz-conventional-changelog": "1.1.4",
+    "exorcist": "0.4.0",
+    "jquery": "2.1.4",
+    "less": "2.5.3",
+    "rx": "4.0.6",
+    "rx-jquery": "1.1.7",
+    "tsd": "0.6.5",
+    "tslint": "2.5.1",
+    "typescript": "1.6.2"
+  }
+}

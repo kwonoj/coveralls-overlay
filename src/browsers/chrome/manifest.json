@@ -6,6 +6,8 @@
   "offline_enabled": false,
   "manifest_version": 2,
   "icons": {
+    "16": "resources/18dp.png",
+    "48": "resources/18dp.png",
     "72": "resources/18dp.png",
     "96": "resources/24dp.png",
     "144": "resources/36dp.png",

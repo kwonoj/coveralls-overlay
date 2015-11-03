@@ -20,7 +20,8 @@
     "package:init": "rm -rf dist/chrome && mkdir \"dist/chrome\" && mkdir \"dist/chrome/lib\"",
     "package:resource": "cp -r resources dist/chrome && cp ./node_modules/jquery/dist/jquery.min.js dist/chrome/lib && cp ./node_modules/rx/dist/rx.min.js dist/chrome/lib && cp ./node_modules/rx-jquery/rx.jquery.js dist/chrome/lib",
     "package:manifest": "cp src/browsers/chrome/manifest.json dist/chrome && cp src/browsers/chrome/options.html dist/chrome/lib",
-    "package": "npm run build && npm run package:init && npm run package:less && npm run package:manifest && npm run package:resource && npm run package:main && npm run package:options"
+    "package:cleanup": "rm dist/chrome/lib/*.map && rm -rf dist/build",
+    "package": "npm run build && npm run package:init && npm run package:less && npm run package:manifest && npm run package:resource && npm run package:main && npm run package:options && npm run package:cleanup"
   },
   "repository": {
     "type": "git",

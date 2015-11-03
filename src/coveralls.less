@@ -1,0 +1,61 @@
+td.blob-num.coveralls.coveralls-on{
+  &.coveralls-hit{
+    background-color: #dbffdb;
+    border-color: #c1e9c1;
+  }
+  &.coveralls-missed{
+    background-color: #ffdddd;
+    border-color: #f1c0c0;
+  }
+  &.coveralls-partial{
+    background: rgb(247, 246, 172);
+    border-color: rgb(213, 212, 116);
+  }
+  &.coveralls-irrelevant{
+    background: #fff;
+    border-color: #eee;
+  }
+}
+
+td.blob-code.coveralls.coveralls-on{
+  &.coveralls-hit{
+    background-color: #eaffea;
+  }
+  &.coveralls-missed{
+    background-color: #ffecec;
+  }
+  &.coveralls-partial{
+    background-color: rgb(252, 252, 214);
+  }
+  &.coveralls-null{
+    background-color: #fff;
+  }
+}
+
+.sha-block.coveralls,
+.sha.coveralls{
+  margin: 0 4px;
+}
+
+.file.coveralls-enabled{
+  // hide Diff higlighting when coveralls is enabled
+  .blob-num-addition, .blob-code-addition,
+  .blob-num-deletion, .blob-code-deletion{
+    background-color: inherit;
+    border-color: inherit;
+  }
+}
+
+.file:not(.coveralls-enabled) .empty-cell.coveralls{
+  // diff/compare show on empty cell diffs
+  &.coveralls-hit{
+    background-color: #34A032;
+  }
+  &.coveralls-partial{
+    background-color: #DADA38;
+  }
+  &.coveralls-missed{
+    background-color: #A03232;
+  }
+
+}

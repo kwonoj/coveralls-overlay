@@ -1,0 +1,44 @@
+{
+  "name": "Coveralls overlay",
+  "version": "0.0.1",
+  "homepage_url": "https://github.com/kwonoj/coveralls-overlay",
+  "description": "Overlay coverallls code coverage into github repo",
+  "offline_enabled": false,
+  "manifest_version": 2,
+  "icons": {
+    "72": "resources/18dp.png",
+    "96": "resources/24dp.png",
+    "144": "resources/36dp.png",
+    "192": "resouces/48dp.png"
+  },
+  "options_ui": {
+    "page": "lib/options.html",
+    "chrome_style": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "all_frames": true,
+      "run_at": "document_end",
+      "js": [
+        "lib/jquery.min.js",
+        "lib/rx.min.js",
+        "lib/rx.jquery.js",
+        "lib/coveralls.js"
+      ],
+      "css": [
+        "lib/coveralls.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "lib/jquery.min.js",
+    "lib/rx.min.js",
+    "lib/rx.jquery.js",
+    "lib/coveralls.js"
+  ],
+  "permissions": [
+    "*://*/*",
+    "storage"
+  ]
+}

@@ -7,3 +7,4 @@ Chrome extension to overlay [coveralls](http://coveralls.io/) code coverage into
 ![demo](screenshots/coveralls.gif)
 
 * This extension is inspired by [codecov browser extension](https://github.com/codecov/browser-extension) and reused some of existing components.
+* Icon resource comes from google's [material design icon](https://www.google.com/design/icons/#ic_visibility).

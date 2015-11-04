@@ -5,4 +5,4 @@ Chrome extension to overlay [coveralls](http://coveralls.io/) code coverage into
 
 ![demo](screenshots/coveralls.gif)
 
-*This extension is inspired by [codecov browser extension](https://github.com/codecov/browser-extension) and reused some of existing components.
+* This extension is inspired by [codecov browser extension](https://github.com/codecov/browser-extension) and reused some of existing components.

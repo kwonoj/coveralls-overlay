@@ -1,7 +1,6 @@
 export interface IStorageObject {
   overlayEnabled: boolean;
   debugEnabled: boolean;
-  callback: any;
   debug_url: any;
   urls: Array<any>;
   setupUrl(url: string): void;
@@ -9,7 +8,6 @@ export interface IStorageObject {
 
 export class StorageObject implements IStorageObject {
   private _urls: Array<string> = [];
-  private _callback: Function = null;
 
   get overlayEnabled(): boolean {
     return this._overlayEnabled;
@@ -24,14 +22,6 @@ export class StorageObject implements IStorageObject {
 
   set debugEnabled(value: boolean) {
     this._debugEnabled = value;
-  }
-
-  get callback(): Function {
-    return this._callback;
-  }
-
-  set callback(value: Function) {
-    this._callback = value;
   }
 
   get debug_url(): any {

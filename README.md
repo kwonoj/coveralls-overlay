@@ -1,4 +1,5 @@
 # coveralls-overlay
+[![Build Status](https://travis-ci.org/kwonoj/coveralls-overlay.svg?branch=master)](https://travis-ci.org/kwonoj/coveralls-overlay)
 
 Chrome extension to overlay [coveralls](http://coveralls.io/) code coverage into github public repository covered by coveralls using [public api](https://coveralls.zendesk.com/hc/en-us/articles/201774865-API-Introduction)
 

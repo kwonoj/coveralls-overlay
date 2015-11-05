@@ -3,6 +3,7 @@
 
 Chrome extension to overlay [coveralls](http://coveralls.io/) code coverage into github public repository covered by coveralls using [public api](https://coveralls.zendesk.com/hc/en-us/articles/201774865-API-Introduction)
 
+You can install extension via [chrome web store](https://t.co/iDp1UWi8ug)
 
 ![demo](screenshots/coveralls.gif)
 

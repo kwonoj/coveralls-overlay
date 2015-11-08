@@ -8,15 +8,16 @@
     "target": "ES5",
     "outDir": "dist/build",
     "module": "commonjs",
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true
    },
    "files": [
-   	"typings/tsd.d.ts",
-   	"src/overlayWindow.ts",
-     "src/githubWindow.ts",
-     "src/storageObject.ts",
-     "src/syncStorage.ts",
-     "src/browsers/chrome/bootStrapper.ts",
-     "src/browsers/chrome/options.ts"
+    "typings/tsd.d.ts",
+    "src/overlayWindow.ts",
+    "src/githubWindow.ts",
+    "src/storageObject.ts",
+    "src/syncStorage.ts",
+    "src/browsers/chrome/bootStrapper.ts",
+    "src/browsers/chrome/options.ts"
    ]
 }

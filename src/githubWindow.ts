@@ -8,10 +8,10 @@ export default class GithubWindow extends OverlayWindow {
   }
 
   private visualizeOverallCoverage(coverage: JSON): void {
-    let changed: string | number = (<any>coverage)['coverage_change'];
+    let changed: number = (<any>coverage)['coverage_change'];
     let overall: number = (<any>coverage)['covered_percent'];
 
-    let changedPrefix: string = (typeof changed === 'string' && (<string>changed).indexOf('-') > 0) ? '' : '+';
+    let changedPrefix: string = changed > 0 ? '+' : '';
     let formatString: string = `${overall.toFixed(2)}%,
                                 ${changedPrefix}${changed}`;
 

@@ -1,6 +1,6 @@
 {
   "name": "coveralls-overlay",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Chrome extension to overlay coveralls code coverage",
   "main": "",
   "config": {

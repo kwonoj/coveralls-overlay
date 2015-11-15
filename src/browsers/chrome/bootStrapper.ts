@@ -1,7 +1,7 @@
 /// <reference path="../../../typings/tsd.d.ts"/>
 import GithubWindow from '../../githubWindow';
 import { OverlayWindow } from '../../overlayWindow';
-import SyncStorage from '../../syncStorage';
+import { ChromeStorage } from './chromeStorage';
 import { IStorageObject } from '../../storageObject';
 
 /**
@@ -10,6 +10,7 @@ import { IStorageObject } from '../../storageObject';
 class BootStrapper {
   private static preferences: IStorageObject = null;
   private overlay: OverlayWindow = null;
+  private storage: ChromeStorage = new ChromeStorage();
 
   constructor(private context: HTMLDocument) {
     this.initialize();
@@ -22,7 +23,7 @@ class BootStrapper {
     }
     let url = preferences.debug_url || document.URL;
     if (!(url.indexOf('https://github.com') < 0)) {
-      return new GithubWindow(preferences);
+      return new GithubWindow(preferences, this.storage);
     }
     return null;
   }
@@ -33,7 +34,7 @@ class BootStrapper {
       return;
     }
 
-    SyncStorage.loadOption((preferences: IStorageObject) => {
+    this.storage.loadOption((preferences: IStorageObject) => {
       BootStrapper.preferences = preferences;
       this.setupOverlay();
     });

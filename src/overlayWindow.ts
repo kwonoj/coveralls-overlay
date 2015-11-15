@@ -1,6 +1,6 @@
 /// <reference path="../typings/tsd.d.ts"/>
 import { IStorageObject } from './storageObject';
-import SyncStorage from './syncStorage';
+import { ISyncStorage } from './syncStorage';
 import * as Rx from 'rx';
 import Observable = Rx.Observable;
 
@@ -23,7 +23,7 @@ export abstract class OverlayWindow {
   protected abstract prepareOverlay(): void;
   protected abstract visualizeOverlay(value: any): void;
 
-  constructor(protected preferences: IStorageObject) {
+  constructor(protected preferences: IStorageObject, private storage: ISyncStorage) {
     this.initialize();
   }
 
@@ -75,7 +75,7 @@ export abstract class OverlayWindow {
       return Observable.of(stored);
     }
 
-    let observable = Observable.fromCallback<any>(SyncStorage.loadCoverage);
+    let observable = Observable.fromCallback<any>(this.storage.loadCoverage);
     return observable(this.coverage, id).map(x => {
       if (!x) {
         return this.retrieveCoverageObservable(id);
@@ -97,7 +97,7 @@ export abstract class OverlayWindow {
 
     const visualize: (coverage: JSON) => void = (coverage: JSON) => {
       this.coverage[id] = coverage;
-      SyncStorage.saveCoverage(this.coverage, () => { });
+      this.storage.saveCoverage(this.coverage, () => { });
       this.visualizeOverlay(coverage);
     };
 

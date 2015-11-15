@@ -12,16 +12,16 @@
     "postinstall": "tsd install",
     "build": "npm run lint:src && tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:src": "tslint -c .tslintrc src/githubWindow.ts src/overlayWindow.ts src/browsers/chrome/bootStrapper.ts src/browsers/chrome/options.ts src/storageObject.ts src/syncStorage.ts",
+    "lint:src": "tslint -c .tslintrc src/githubWindow.ts src/overlayWindow.ts src/browsers/chrome/bootStrapper.ts src/browsers/chrome/options.ts src/browsers/chrome/chromeStorage.ts src/storageObject.ts src/syncStorage.ts",
     "commit": "git-cz",
     "package:less": "lessc src/coveralls.less dist/chrome/lib/coveralls.css",
-    "package:options": "browserify -d dist/build/browsers/chrome/options.js dist/build/storageObject.js dist/build/syncStorage.js | exorcist dist/chrome/lib/options.js.map > dist/chrome/lib/options.js",
-    "package:main": "browserify -d dist/build/browsers/chrome/bootStrapper.js dist/build/githubWindow.js dist/build/overlayWindow.js dist/build/storageObject.js dist/build/syncStorage.js | exorcist dist/chrome/lib/coveralls.js.map > dist/chrome/lib/coveralls.js",
+    "package:options": "browserify -d dist/build/browsers/chrome/options.js dist/build/browsers/chrome/chromeStorage.js dist/build/storageObject.js dist/build/syncStorage.js | exorcist dist/chrome/lib/options.js.map > dist/chrome/lib/options.js",
+    "package:main": "browserify -d dist/build/browsers/chrome/bootStrapper.js dist/build/browsers/chrome/chromeStorage.js dist/build/githubWindow.js dist/build/overlayWindow.js dist/build/storageObject.js dist/build/syncStorage.js | exorcist dist/chrome/lib/coveralls.js.map > dist/chrome/lib/coveralls.js",
     "package:init": "rm -rf dist/chrome && mkdir \"dist/chrome\" && mkdir \"dist/chrome/lib\"",
     "package:resource": "cp -r resources dist/chrome && cp ./node_modules/jquery/dist/jquery.min.js dist/chrome/lib && cp ./node_modules/rx/dist/rx.min.js dist/chrome/lib && cp ./node_modules/rx-jquery/rx.jquery.js dist/chrome/lib",
     "package:manifest": "cp src/browsers/chrome/manifest.json dist/chrome && cp src/browsers/chrome/options.html dist/chrome/lib",
     "package:cleanup": "rm dist/chrome/lib/*.map && rm -rf dist/build",
-    "package": "npm run build && npm run package:init && npm run package:less && npm run package:manifest && npm run package:resource && npm run package:main && npm run package:options && npm run package:cleanup"
+    "package": "npm run build && npm run package:init && npm run package:less && npm run package:manifest && npm run package:resource && npm run package:main && npm run package:options"
   },
   "repository": {
     "type": "git",

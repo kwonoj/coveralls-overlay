@@ -1,10 +1,10 @@
 import { pageType, lineType, OverlayWindow } from './overlayWindow';
 import { IStorageObject } from './storageObject';
-import SyncStorage from './syncStorage';
+import { ISyncStorage } from './syncStorage';
 
 export default class GithubWindow extends OverlayWindow {
-  constructor(preferences: IStorageObject) {
-    super(preferences);
+  constructor(preferences: IStorageObject, storage: ISyncStorage) {
+    super(preferences, storage);
   }
 
   private visualizeOverallCoverage(coverage: JSON): void {

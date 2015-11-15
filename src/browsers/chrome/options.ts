@@ -1,14 +1,15 @@
 import { IStorageObject } from '../../storageObject';
-import SyncStorage from '../../syncStorage';
+import { ChromeStorage } from './chromeStorage';
 
 class Options {
+  private static storage: ChromeStorage = new ChromeStorage();
   constructor() {
     this.restoreState();
     this.bindBehaviors();
   }
 
   private restoreState(): void {
-    SyncStorage.loadOption((value: IStorageObject) => {
+    Options.storage.loadOption((value: IStorageObject) => {
       (<HTMLInputElement>document.getElementById('overlay')).checked = value.overlayEnabled;
       (<HTMLInputElement>document.getElementById('debug')).checked = value.debugEnabled;
     });
@@ -22,7 +23,7 @@ class Options {
     let overlayEnabled = (<HTMLInputElement>document.getElementById('overlay')).checked;
     let debugEnabled = (<HTMLInputElement>document.getElementById('debug')).checked;
 
-    SyncStorage.saveOption(overlayEnabled, debugEnabled, () => {
+    Options.storage.saveOption(overlayEnabled, debugEnabled, () => {
       let status = document.getElementById('status');
       status.textContent = 'Options saved.';
       setTimeout(() => { status.textContent = ''; }, 750);

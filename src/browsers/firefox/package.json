@@ -1,0 +1,30 @@
+{
+  "name": "coveralls",
+  "title": "Coveralls overlay",
+  "id": "overlay@coveralls.io",
+  "description": "Overlay coveralls code coverage into github repo",
+  "author": "OJ Kwon",
+  "homepage": "https://github.com/kwonoj/coveralls-overlay",
+  "icon": "data/resources/18dp.png",
+  "license": "Apache v2.0",
+  "version": "0.0.2",
+  "preferences": [
+    {
+      "name": "overlayEnabled",
+      "title": "Enable coverage overlay",
+      "description": "Highlight lines by default",
+      "type": "bool",
+      "value": true
+    },
+    {
+      "name": "debugEnabled",
+      "title": "Debug Mode",
+      "description": "Log debug information to console",
+      "type": "bool",
+      "value": false
+    }
+  ],
+  "permissions": {
+    "cross-domain-content": ["https://"]
+  }
+}

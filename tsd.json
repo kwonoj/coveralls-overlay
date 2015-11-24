@@ -76,6 +76,9 @@
     },
     "rx/rx.async.d.ts": {
       "commit": "ac5cd185d007f6aacd6eeaaecfb75dae3ff59553"
+    },
+    "firefox/firefox.d.ts": {
+      "commit": "b2d17b5dad042e293e77d09f2a30d281325cb606"
     }
   }
 }

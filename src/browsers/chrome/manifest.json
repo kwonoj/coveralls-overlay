@@ -11,7 +11,7 @@
     "72": "resources/18dp.png",
     "96": "resources/24dp.png",
     "144": "resources/36dp.png",
-    "192": "resouces/48dp.png"
+    "192": "resources/48dp.png"
   },
   "options_ui": {
     "page": "lib/options.html",

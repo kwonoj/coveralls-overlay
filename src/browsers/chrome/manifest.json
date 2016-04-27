@@ -1,6 +1,6 @@
 {
   "name": "Coveralls overlay",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage_url": "https://github.com/kwonoj/coveralls-overlay",
   "description": "Overlay coveralls code coverage into github repo",
   "offline_enabled": false,
